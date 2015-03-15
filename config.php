@@ -1,9 +1,9 @@
 <?php
 return array(
+    'title' => 'Airdoc',
     'mount' => array(
-        '' => '.',
-        'mount1' => 'dir1',
-        'mount2' => 'dir2',
+        'doc' => '/',
+        'mount2' => '/dir2',
     ),
     'password' => '123456',
     'cache_dir' => '/tmp/airdoc',
