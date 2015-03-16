@@ -11,7 +11,7 @@ class Airdoc {
     }
 
     public function isIgnore($path) {
-        $name = basename($path);
+        $name = $this->getBasename($path);
         if ($name[0] === '.') {
             return true;
         }
@@ -40,12 +40,12 @@ class Airdoc {
     }
 
     public function isStatic($path) {
-        $ext = strtolower(pathinfo($path, PATHINFO_EXTENSION));
+        $ext = strtolower($this->getExt($path));
         return in_array($ext, array('css', 'js', 'jpg', 'jpeg', 'png', 'svg', 'txt'));
     }
 
     public function isMarkdown($path) {
-        $ext = strtolower(pathinfo($path, PATHINFO_EXTENSION));
+        $ext = strtolower($this->getExt($path));
         return in_array($ext, array('md', 'markdown'));
     }
 
@@ -172,6 +172,19 @@ class Airdoc {
         return str_replace('//', '/', $a.'/'.$b);
     }
 
+    private function getExt($path) {
+        $dotpos = strrpos($path, '.');
+        if ($dotpos === false) {
+            return '';
+        }
+
+        return substr($path, $dotpos + 1);
+    }
+
+    private function getBasename($filename){
+        return preg_replace('/^.+[\\\\\\/]/', '', $filename);
+    }
+
     private function getMimeType($filename) {
         $mime_types = array(
 
@@ -229,7 +242,7 @@ class Airdoc {
             'ods' => 'application/vnd.oasis.opendocument.spreadsheet',
         );
 
-        $ext = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
+        $ext = strtolower($this->getExt($filename));
         if (isset($mime_types[$ext])) {
             return $mime_types[$ext];
         }
