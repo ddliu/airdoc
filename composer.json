@@ -1,0 +1,14 @@
+{
+    "name": "ddliu/airdoc",
+    "description": "Serve document on the air",
+    "require": {
+        "erusev/parsedown-extra": "~0.7"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "dong",
+            "email": "ddliuhb@gmail.com"
+        }
+    ]
+}
