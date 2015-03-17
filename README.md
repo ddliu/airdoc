@@ -12,6 +12,11 @@ Serve markdown document on the air.
 ### PHP Builtin Server
 
 ```
+make server
+```
+or
+
+```
 php -S localhost:8080 -t . router.php
 ```
 
@@ -23,5 +28,4 @@ See nginx.conf
 
 - Security
 - Simple authentication
-- Multiple source support
 - Cache

@@ -16,3 +16,8 @@
         </style>
     </head>
     <body>
+    <?php $this->render('breadcrumb.php', ['breadcrumb' => $breadcrumb]);?>
+    <?php $this->block('content');?>
+    <div class="footer">Powered by <a href="http://github.com/ddliu/airdoc">airdoc</a></div>
+</body>
+</html>

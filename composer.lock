@@ -4,8 +4,98 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1dcd851ff6fb09b37ae5cebd720b26e8",
+    "hash": "c269bc223aa2d509f3b24366ce580c9f",
     "packages": [
+        {
+            "name": "ddliu/normurl",
+            "version": "v0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ddliu/normurl.git",
+                "reference": "20255dce9403731170356a7b4fb7e95a8adf45b0",
+                "mirrors": [
+                    {
+                        "url": "/%package%/%normalizedUrl%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ddliu/normurl/zipball/20255dce9403731170356a7b4fb7e95a8adf45b0",
+                "reference": "20255dce9403731170356a7b4fb7e95a8adf45b0",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "http://pkg.phpcomposer.com/repo/packagist/dists/%package%/%version%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ddliu\\normurl\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "dong",
+                    "email": "ddliuhb@gmail.com"
+                }
+            ],
+            "description": "Normalize URL",
+            "time": "2014-11-05 10:15:29"
+        },
+        {
+            "name": "ddliu/template",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ddliu/php-template.git",
+                "reference": "43d247daf42bdd641830366f1e8ddbe4789e14f2",
+                "mirrors": [
+                    {
+                        "url": "/%package%/%normalizedUrl%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ddliu/php-template/zipball/43d247daf42bdd641830366f1e8ddbe4789e14f2",
+                "reference": "43d247daf42bdd641830366f1e8ddbe4789e14f2",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "http://pkg.phpcomposer.com/repo/packagist/dists/%package%/%version%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ddliu\\template\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "dong",
+                    "email": "ddliuhb@gmail.com"
+                }
+            ],
+            "description": "Native PHP template engine",
+            "time": "2014-12-31 03:44:52"
+        },
         {
             "name": "erusev/parsedown",
             "version": "1.5.1",

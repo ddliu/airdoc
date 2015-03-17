@@ -1,13 +1,14 @@
 <?php
-return array(
+return [
     'title' => 'Airdoc',
-    'mount' => array(
+    'mount' => [
         'doc' => '/',
         'mount2' => '/dir2',
-    ),
+    ],
     'password' => '123456',
     'cache_dir' => '/tmp/airdoc',
-    'exclude' => array(
-        '*.php'
-    )
-);
+    'ignore_regexp' => [
+        '/\.',
+        '\.php$',
+    ],
+];

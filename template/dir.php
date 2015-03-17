@@ -1,18 +1,15 @@
-<?php require(dirname(__FILE__).'/breadcrumb.php');?>
+<?php $this->extend('layout.php');?>
+<?php $this->begin('content');?>
 
 <div class="list">
 
-<?php if ($dirs):?>
+<?php if ($children):?>
 <ul>
-<?php foreach ($dirs as $dir):?>
-    <li><a href="<?php echo $dir['path'];?>"><?php echo $dir['name'];?></a></li>
-<?php endforeach;?>
+    <?php foreach ($children as $child):?>
+    <li><a href="<?php echo $child->getFilename();?><?php if ($child->isDir()):?>/<?php endif;?>"><?php echo $child->getFilename();?></a></li>
+    <?php endforeach;?>
 </ul>
 <?php endif;?>
-
-<ul>
-<?php foreach ($files as $file) :?>
-    <li><a href="<?php echo $file['path'];?>"><?php echo $file['name'];?></a></li>
-<?php endforeach;?>
-</ul>
 </div>
+
+<?php $this->end();?>
