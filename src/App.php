@@ -83,6 +83,11 @@ class App {
             return;
         }
         $children = $this->fs->getChildren($path);
+        foreach ($children as $i => $child) {
+            if ($this->ignore($path.'/'.$child->getFilename())) {
+                unset($children[$i]);
+            }
+        }
 
         $title = $dirInfo->getBasename().' - '.$this->configs['title'];
 

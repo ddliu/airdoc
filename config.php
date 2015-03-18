@@ -4,6 +4,7 @@ return [
     'mount' => [
         'doc' => '/',
         'mount2' => '/dir2',
+        '../javascript' => '/',
     ],
     'comstom_auth' => false,
     'users' => [
