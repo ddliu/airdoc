@@ -83,9 +83,17 @@ class App {
             return;
         }
         $children = $this->fs->getChildren($path);
+
+        $indexInfo = null;
+        $indexContent = null;
+
         foreach ($children as $i => $child) {
             if ($this->ignore($path.'/'.$child->getFilename())) {
                 unset($children[$i]);
+            }
+
+            if ($child->isFile() && $this->isIndex($child->getFilename())) {
+                $indexInfo = $child;
             }
         }
 
@@ -96,11 +104,18 @@ class App {
             return strcasecmp($a->getFilename(), $b->getFilename());
         });
 
+        if ($indexInfo) {
+            $extra = new \ParsedownExtra();
+            $indexContent = $extra->text(file_get_contents($indexInfo));
+        }
+
         $title = $dirInfo->getBasename().' - '.$this->configs['title'];
 
         $this->render('dir.php', [
             'title' => $title,
             'breadcrumb' => $this->getBreadcrumb($path),
+            'indexInfo' => $indexInfo,
+            'indexContent' => $indexContent,
             'children' => $children,
         ]);
     }
@@ -157,5 +172,9 @@ class App {
         }
 
         return false;
+    }
+
+    protected function isIndex($filename) {
+        return in_array(strtolower($filename), ['readme.md', 'index.md', 'readme.markdown', 'index.markdown']);
     }
 }

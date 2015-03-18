@@ -20,4 +20,12 @@
 <?php endif;?>
 </div>
 
+<?php if ($indexContent):?>
+<div class="content">
+<div class="markdown-body">
+<?php echo $indexContent;?>
+</div>
+</div>
+<?php endif;?>
+
 <?php $this->end();?>
