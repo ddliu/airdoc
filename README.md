@@ -2,6 +2,8 @@
 
 Serve markdown document on the air.
 
+![Screenshot](screenshot.png)
+
 ## Features
 
 - Documents are structured by directory
