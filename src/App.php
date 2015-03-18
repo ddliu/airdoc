@@ -7,6 +7,8 @@
  */
 
 namespace ddliu\airdoc;
+use ddliu\airdoc\Auth\CallbackAuth;
+use ddliu\airdoc\Auth\BasicAuth;
 use ddliu\template\Engine as TemplateEngine;
 
 class App {
@@ -30,7 +32,21 @@ class App {
         ];
     }
 
+    public function auth() {
+        if (!empty($this->configs['custom_auth'])) {
+            $auth = new CallbackAuth($this->configs['custom_auth']);
+        } elseif (!empty($this->configs['users'])) {
+            $auth = new BasicAuth($this->configs['users']);
+        } else {
+            return true;
+        }
+
+        return $auth->auth();
+    }
+
     public function run() {
+        $this->auth();
+
         list($root, $path) = Util::getUrlInfo();
         if ($this->ignore($path)) {
             return $this->notFound();

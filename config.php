@@ -5,8 +5,11 @@ return [
         'doc' => '/',
         'mount2' => '/dir2',
     ],
-    'password' => '123456',
-    'cache_dir' => '/tmp/airdoc',
+    'comstom_auth' => false,
+    'users' => [
+        'user1' => 'password1',
+        'user2' => 'password2',
+    ],
     'ignore_regexp' => [
         '/\.',
         '\.php$',
