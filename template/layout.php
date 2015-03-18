@@ -6,6 +6,7 @@
         <title><?php echo $title;?></title>
         <link rel="stylesheet" href="/static/base.css">
         <link rel="stylesheet" href="/static/github-markdown.css">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
         <style>
             body {
                 min-width: 200px;
