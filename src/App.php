@@ -89,6 +89,13 @@ class App {
             }
         }
 
+        usort($children, function($a, $b) {
+            if ($a->isDir() && $b->isFile()) return -1;
+            if ($a->isFile() && $b->isDir()) return 1;
+
+            return strcasecmp($a->getFilename(), $b->getFilename());
+        });
+
         $title = $dirInfo->getBasename().' - '.$this->configs['title'];
 
         $this->render('dir.php', [
